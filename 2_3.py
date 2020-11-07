@@ -18,7 +18,11 @@ for fileName in os.listdir(dir):
 	with open(dir + fileName, 'w', encoding='UTF-8') as dstFile:
 		dstFile.write(text)
 
-# od 26:11 prezentujacy wspomina o mozliwych dodatkowych technikach czyszczenia:
-# - usuniecie stopwords, ktore nic nie wnosza
-# - usuniecie fleksji i pozostawienie tylko rdzenia danego slowa - z tym ze ta technika wplynie na dzialanie kolejnych skryptow
+# od 26:11 prezentujący wspomina o możliwych dodatkowych technikach czyszczenia:
+# - usunięcie stopwords, które nic nie wnoszą
+# - usunięcie fleksji i pozostawienie tylko rdzenia danego slowa - z tym że ta technika wplynie na działanie kolejnych skryptów
 
+
+# moim (Tomasz Klim) zdaniem warto tutaj obsłużyć przypadki:
+# - skróty z kropkami - "np."
+# - liczby z przecinkami i kropkami w treści

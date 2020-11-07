@@ -1,48 +1,51 @@
 # Wykorzystanie stylometrii i uczenia maszynowego w informatyce śledczej
 
-Repozytorium zawiera ręcznie odtworzone fragmenty tej prezentacji, która nie jest niestety dostępna w oryginale:
+Repozytorium zawiera ręcznie odtworzone fragmenty kodu, który niestety jest dostępny tylko w postaci filmu:
 
 https://www.youtube.com/watch?v=Iu-HLy9hICg
 
 https://www.youtube.com/watch?v=rGv4wRE__78
-
-## Artykuł
 
 Zobacz też nasz artykuł nt. stylometrii:
 
 https://payload.pl/stylometria/
 
 
+## Instalacja zależności na Linuksie
+
+`apt-get install python3 python3-tk unrtf catdoc poppler-utils timelimit`
+
+`pip3 install prettyprint matplotlib numpy seaborn`
+
+
 ## Jak to właściwie działa?
 
-1. Do katalogu Data wrzucamy pliki z tekstami do porównania. Obsługiwane są: surowy tekst, Word/Excel do wersji 2003, RTF i PDF. W systemie Linux upewniamy się, że wszystkie pliki mają rozszerenia pisane małymi literami.
+1. Klonujemy to repozytorium i tworzymy w nim katalogi:
 
-2. Sprawdzamy, czy ilość rozpoznanych plików zgadza się z tym, co wrzuciliśmy - jeśli nie, poprawiamy rozszerzenia:
+`mkdir -p Data Process`
+
+2. Do katalogu Data wrzucamy pliki z tekstami do porównania. Obsługiwane są: surowy tekst, Word/Excel do wersji 2003, RTF i PDF. W systemie Linux upewniamy się, że wszystkie pliki mają rozszerenia pisane małymi literami.
+
+3. Sprawdzamy, czy ilość rozpoznanych plików zgadza się z tym, co wrzuciliśmy - jeśli nie, poprawiamy rozszerzenia:
 
 `python3 1_3.py`
 
-3. Przerabiamy pliki w formatach binarnych na format tekstowy:
+4. Przerabiamy pliki w formatach binarnych na format tekstowy:
 
 `python3 2_1_linux.py`
 
 aby to polecenie zadziałało, najpierw zainstaluj zależności (patrz niżej).
 
-4. Wykonujemy kolejno te 2 skrypty - przerabiają one pliki źródłowe z katalogu Data na pliki znormalizowane na potrzeby dalszej obróbki:
+5. Wykonujemy kolejno te 2 skrypty - przerabiają one pliki źródłowe z katalogu Data na pliki znormalizowane na potrzeby dalszej obróbki:
 
 `python3 2_2.py`
 `python3 2_3.py`
 
-5. Skryptami z grupy `3_*.py` zaczynamy właściwą analizę danych.
+6. Skryptem `3_4_poprawiony.py` uruchamiamy właściwą analizę danych. Na początku tego skryptu znajduje się kilka zmiennych, których tuning może być niezbędny w zależności od analizowanych tekstów.
 
+`python3 3_4_poprawiony.py`
 
-
-## Instalacja zależności na Linuksie
-
-`apt-get install python3 unrtf catdoc poppler-utils timelimit`
-
-`pip3 install prettyprint`
-
-`mkdir -p Data Process`
+Skrypt tworzy 2 pliki wynikowe: html z tabelką właściwości tekstów, oraz z obrazkiem heatmapy.
 
 
 
