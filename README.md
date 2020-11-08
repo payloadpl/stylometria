@@ -6,14 +6,16 @@ https://www.youtube.com/watch?v=Iu-HLy9hICg
 
 https://www.youtube.com/watch?v=rGv4wRE__78
 
-Zobacz też nasz artykuł nt. stylometrii:
+Zobacz też nasze artykuły nt. stylometrii:
 
 https://payload.pl/stylometria/
+
+https://payload.pl/stylometria-policja/
 
 
 ## Instalacja zależności na Linuksie
 
-`apt-get install python3 python3-tk unrtf catdoc poppler-utils timelimit`
+`apt-get install python3 unrtf catdoc poppler-utils timelimit`
 
 `pip3 install prettyprint matplotlib numpy seaborn`
 

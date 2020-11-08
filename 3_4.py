@@ -1,6 +1,10 @@
 # Niniejszy skrypt jest ręcznie odtworzoną i potem poprawioną wersją tego, co przedstawia film:
 # https://www.youtube.com/watch?v=Iu-HLy9hICg
 
+# Niektóre rzeczy zostały odtworzone z głowy - część z nich została potem zweryfikowana w oparciu o drugą
+# prezentację: https://www.youtube.com/watch?v=rGv4wRE__78 (np. brakująca w pierwszej funkcja CosineSimUnion),
+# inne zaś tylko empirycznie.
+
 
 
 # długości n-gramów (nie mają jednej "poprawnej" wartości, raczej trzeba je dobierać eksperymentalnie do specyfiki portównywanych tekstów)
@@ -30,12 +34,9 @@ def CosineSimIntersection(x, y):
 	denom = math.sqrt(sum1*sum2)
 
 	if not denom:
-		return 0
+		return 0.0
 	return num/denom
 
-# tej funkcji w oryginalnej prezentacji w ogóle nie było - ktoś najprawdopodobniej upraszczał
-# na szybko kod i zapomniał o niej - odtworzyliśmy ją dla Was, ale nie mamy pewności, czy poprawnie
-# różnica pomiędzy tą funkcją a poprzednią to znak | zamiast & w pierwszej linii kodu
 def CosineSimUnion(x, y):
 	keys = set(x.keys()) | set(y.keys())
 
@@ -45,7 +46,7 @@ def CosineSimUnion(x, y):
 	denom = math.sqrt(sum1*sum2)
 
 	if not denom:
-		return 0
+		return 0.0
 	return num/denom
 
 def JaccardSim(A, B):
